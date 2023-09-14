@@ -14,13 +14,12 @@ async function getMessage() {
     console.log('clicked');
     const options = {
         method: 'POST',
-        Headers: {
+        headers: {
             'Authorization': `Bearer ${API_KEY}`, 
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
-            messages: [{role: "user", content: "hello!"}],
             messages: [{role: "user", content: inputElement.value}],
             max_tokens: 100
         })
